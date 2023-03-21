@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+
+}
+
+body{
+    background: #120b0b;
+    color: white;
+}
+
+
+/*  */
+#header{
+    width: 100%;
+    height:100vh;
+    background-image: url(img/backgroundimg.png);
+    background-size:cover;
+    background-position:center;
+}
+
+
+#folio{
+    color: red;
+}
+
+#port, #folio{
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* remove ul tag decoration
+ list horizentally
+*/
+nav ul li{
+    list-style: none;
+    display: inline-block; 
+    margin: 10px 20px;
+}
+/* a tag changes */
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+
+}
+/* hover effect for a tag*/
+nav ul li a::after{
+    /* content under a tag if we add akash then show akash under a tag */
+    content: '';   
+    /* width of line below the a tag without hover */
+    width: 0px;
+    /* height of line under a tag */
+    height: 3px;
+    /* color of line */
+    background: #ff004f;
+    
+    position:absolute;
+    /* from where we want to start line from a tag */
+    left: 0;
+    /* where we ant line position  */
+    bottom: -6px;
+    /* line transation time */
+    transition: 0.5s;
+
+}
+nav ul li a:hover::after{
+    /* after hover line width */
+    width: 100%;
+}
+
+.headertext{
+    margin-top:20% ;
+    font-size: 30px;
+
+}
+
+.headertext h1{
+    font-size: 60px;
+    margin-top:10px ;
+}
+.headertext h1 span{
+    color: #ff004f;
+}
+
+/* -------------------about---------------------------- */
+
+#about{
+    padding: 80px 0;
+     
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.aboutcol-1{
+    flex-basis: 30%;
+}
+
+.aboutcol-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.aboutcol-2{
+    flex-basis: 65%;
+
+}
+.aboutcol-2 h1 span{
+    color: yellow;
+
+}
+
+.aboutcol-2 p{
+    font-size: large;
+}
+
+.sub-tital{
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+}
+
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+
+}
+
+.tab-links{
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight:bold;
+    /* change cursor in pointer */
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after{
+     /* content under a tag if we add akash then show akash under a tag */
+     content: '';   
+     /* width of line below the a tag without hover */
+     width: 0px;
+     /* height of line under a tag */
+     height: 3px;
+     /* color of line */
+     background: #f7ff02;
+     
+     position:absolute;
+     /* from where we want to start line from a tag */
+     left: 0;
+     /* where we ant line position  */
+     bottom: -8px;
+     /* line transation time */
+     transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+
+}
+
+.tab-contents ul li{
+    list-style:none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span{
+    color: #ff004f;
+    font-size: 20px;
+}
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+/* -----------------------------------education----------------------------------------- */
+
+#education{
+    padding: 0 0;
+}
+.education-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top:50px ;
+
+}
+
+.education-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.education-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.education-list div h3{
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #ff1313;
+}
+
+.education-list div a{
+    text-decoration: none;
+    color: rgb(255, 0, 255);
+    font-size: 20px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.education-list div:hover{
+    background: #3cf8ff;
+    transform: translateY(-20px);
+    color: #120b0b;
+
+}
+.education-list div h3:hover{
+    color: #3c00ff;
+}
+.education-list div a:hover{
+    color: #000000;
+    background:#ff1313;
+}
+
+/*------------------------ projects ------------------------------------*/
+
+#projects{
+    padding: 0 0;
+    
+
+}
+
+.projects-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top:50px ;
+    
+}
+.project{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s;
+    
+}
+
+.project img{
+    width: 100%;
+    height: 350px;
+    /* border: 5px solid rgb(255, 0, 0); */
+    border-radius:10px ;
+    display: block;
+
+}
+
+.layer{
+    height: 0;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(114, 38, 38, 0.1), rgba(255,0,0,4));
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column ;
+    padding: 0 4px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 1s;
+}
+
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-size: 20px;
+
+}
+
+.layer a{
+    margin-top: 20px;
+    color:#ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background:#fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+
+.project:hover img{
+    transform: scale(1.1);
+}
+
+.project:hover .layer{
+    height: 100%;
+}
+
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    border-radius: 6px;
+    padding: 14px 50px;
+    text-decoration: none;
+    color: white;
+    transition:  background 0.5s;
+}
+
+.btn:hover{
+    background: #ff004f;
+}
